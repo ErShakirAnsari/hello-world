@@ -24,7 +24,7 @@ jobs:
         run: mvn clean package --no-transfer-progress
       - name: Publish to the Maven Central Repository
         run: |
-          mvn deploy -Prelease -Dmaven.test.skip=true \
+          mvn deploy -Prelease-with-github-action -Dmaven.test.skip=true \
           --no-transfer-progress \
           --batch-mode
         env:
