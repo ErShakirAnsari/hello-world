@@ -1,8 +1,8 @@
 name: Publish package to the Maven Central Repository with push/pull
 
 on:
-  push:
-    branches: [ "release" ]
+#  push:
+#    branches: [ "release" ]
   pull_request:
     branches: [ "release" ]
 
