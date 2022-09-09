@@ -1,4 +1,4 @@
-name: mvn-clean-build
+name: Maven Build
 
 on:
   push:
