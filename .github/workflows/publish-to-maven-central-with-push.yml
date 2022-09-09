@@ -1,10 +1,10 @@
 name: Maven Central Deployment
 
 on:
-#  push:
-#    branches: [ "release" ]
-  pull_request:
+  push:
     branches: [ "release" ]
+#  pull_request:
+#    branches: [ "release" ]
 
 jobs:
   publish:
