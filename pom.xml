@@ -234,8 +234,7 @@
 <!--        <connection>scm:git:github.com/ErShakirAnsari/hello-world.git</connection>-->
 <!--        <developerConnection>scm:git:ssh://github.com:ErShakirAnsari/hello-world.git</developerConnection>-->
 <!--        <url>https://github.com/ErShakirAnsari/hello-world</url>-->
-<!--        <tag>hello-world-0.0.10</tag>-->
-      <tag>hello-world-0.0.10</tag>
+        <tag>HEAD</tag>
   </scm>
 
     <licenses>
