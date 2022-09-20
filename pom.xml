@@ -52,9 +52,9 @@
                 <version>3.0.0-M6</version>
                 <configuration>
                     <!--<tagNameFormat>${project.artifactId}-v${project.version}</tagNameFormat>-->
-                    <goal>
-                        <autoversionsubmodules>true</autoversionsubmodules>
-                    </goal>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>releases</releaseProfiles>
                 </configuration>
             </plugin>
 
