@@ -6,7 +6,7 @@
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.0.9</version>
+    <version>0.0.10-SNAPSHOT</version>
     <name>Hello World</name>
     <url>https://github.com/ErShakirAnsari/hello-world</url>
     <description>Hello world</description>
@@ -41,6 +41,15 @@
                     </archive>
                 </configuration>
             </plugin>
+
+            <!--maven-release-plugin-->
+            <plugin>
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-release-plugin -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.0.0-M6</version>
+            </plugin>
+
         </plugins>
     </build>
 
@@ -216,9 +225,10 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git://github.com:ErShakirAnsari/hello-world.git</connection>
+        <connection>scm:git:https://github.com:ErShakirAnsari/hello-world.git</connection>
         <developerConnection>scm:git:ssh://github.com:ErShakirAnsari/hello-world.git</developerConnection>
         <url>https://github.com/ErShakirAnsari/hello-world</url>
+        <tag>v${project.version}</tag>
     </scm>
 
     <licenses>
