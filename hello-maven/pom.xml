@@ -7,8 +7,9 @@
     </parent>
 
     <artifactId>hello-maven</artifactId>
-    <packaging>jar</packaging>
+    <name>Hello Maven</name>
 
+    <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
