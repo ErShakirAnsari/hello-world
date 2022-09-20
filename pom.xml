@@ -4,7 +4,7 @@
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.0.15</version>
+    <version>0.0.16-SNAPSHOT</version>
 
     <name>Hello World</name>
     <url>https://github.com/ErShakirAnsari/hello-world</url>
@@ -234,7 +234,7 @@
 <!--        <connection>scm:git:github.com/ErShakirAnsari/hello-world.git</connection>-->
 <!--        <developerConnection>scm:git:ssh://github.com:ErShakirAnsari/hello-world.git</developerConnection>-->
 <!--        <url>https://github.com/ErShakirAnsari/hello-world</url>-->
-        <tag>hello-world-0.0.15</tag>
+        <tag>HEAD</tag>
   </scm>
 
     <licenses>
