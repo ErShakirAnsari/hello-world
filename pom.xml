@@ -255,7 +255,6 @@
                             <!-- below url will be provided by sonatype in you JIRA issue -->
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <skipStaging>true</skipStaging>
                         </configuration>
                     </plugin>
                 </plugins>
