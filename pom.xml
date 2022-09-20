@@ -48,7 +48,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>3.0.0-M6</version>
                 <configuration>
-                    <tagNameFormat>${project.artifactId}-v${project.version}</tagNameFormat>
+<!--                    <tagNameFormat>${project.artifactId}-v${project.version}</tagNameFormat>-->
                 </configuration>
             </plugin>
 
