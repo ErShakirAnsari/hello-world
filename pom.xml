@@ -55,7 +55,7 @@
                     <!--<tagNameFormat>${project.artifactId}-v${project.version}</tagNameFormat>-->
                     <tagNameFormat>v@{project.version}</tagNameFormat>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <releaseProfiles>releases</releaseProfiles>
+                    <releaseProfiles>release</releaseProfiles>
                 </configuration>
             </plugin>
 
