@@ -224,8 +224,10 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:git@github-ld:ErShakirAnsari/hello-world.git</connection>
-        <tag>HEAD</tag>
+        <connection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</connection>
+        <developerConnection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</developerConnection>
+        <url>https://github.com/ErShakirAnsari/hello-world/</url>
+
 <!--        <connection>scm:git:github.com/ErShakirAnsari/hello-world.git</connection>-->
 <!--        <developerConnection>scm:git:ssh://github.com:ErShakirAnsari/hello-world.git</developerConnection>-->
 <!--        <url>https://github.com/ErShakirAnsari/hello-world</url>-->
