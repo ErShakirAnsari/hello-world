@@ -225,8 +225,8 @@
 
     <scm>
         <connection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</connection>
-        <developerConnection>scm:git:ssh://github.com:ErShakirAnsari/hello-world.git</developerConnection>
-        <url>https://github.com/ErShakirAnsari/hello-world</url>
+<!--        <developerConnection>scm:git:ssh://github.com:ErShakirAnsari/hello-world.git</developerConnection>-->
+<!--        <url>https://github.com/ErShakirAnsari/hello-world</url>-->
         <tag>hello-world-0.0.10</tag>
     </scm>
 
