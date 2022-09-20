@@ -88,11 +88,11 @@
                                     <!--suppress MavenModelInspection -->
                                     <passphraseServerId>${gpg.passphrase}</passphraseServerId>
 
-                                    <gpgArguments>
-                                        <arg>--batch</arg>
-                                        <arg>--pinentry-mode</arg>
+                                    <!--<gpgArguments>
+                                        <arg>&#45;&#45;batch</arg>
+                                        <arg>&#45;&#45;pinentry-mode</arg>
                                         <arg>loopback</arg>
-                                    </gpgArguments>
+                                    </gpgArguments>-->
                                 </configuration>
                             </execution>
                         </executions>
