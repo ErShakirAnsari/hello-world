@@ -20,7 +20,7 @@
         <id-ossrh>ossrh-ershakiransari</id-ossrh>
 
         <!--version-->
-        <version.maven-gpg-plugin>1.6</version.maven-gpg-plugin>
+        <version.maven-gpg-plugin>3.0.1</version.maven-gpg-plugin>
         <version.maven-source-plugin>3.2.0</version.maven-source-plugin>
         <version.maven-javadoc-plugin>3.2.0</version.maven-javadoc-plugin>
         <version.nexus-staging-maven-plugin>1.6.7</version.nexus-staging-maven-plugin>
@@ -83,6 +83,7 @@
                                     <goal>sign</goal>
                                 </goals>
                                 <configuration>
+                                    <useAgent>true</useAgent>
                                     <!--suppress MavenModelInspection -->
                                     <keyname>${gpg.passphrase}</keyname>
                                     <!--suppress MavenModelInspection -->
