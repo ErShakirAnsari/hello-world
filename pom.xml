@@ -85,9 +85,9 @@
                                 <configuration>
                                     <useAgent>true</useAgent>
                                     <!--suppress MavenModelInspection -->
-                                    <keyname>${gpg.passphrase}</keyname>
+                                    <keyname>${gpg.keyname}</keyname>
                                     <!--suppress MavenModelInspection -->
-                                    <passphraseServerId>${gpg.passphrase}</passphraseServerId>
+                                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
 
                                     <gpgArguments>
 <!--                                        <arg>&#45;&#45;batch</arg>-->
