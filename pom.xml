@@ -2,7 +2,7 @@
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.3.0-SNAPSHOT</version>
+    <version>0.3.3-SNAPSHOT</version>
 
     <name>Hello World</name>
     <url>https://github.com/ErShakirAnsari/hello-world</url>
@@ -82,19 +82,15 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-                                <configuration>
-                                    <useAgent>true</useAgent>
-                                    <!--suppress MavenModelInspection -->
-                                    <keyname>${gpg.keyname}</keyname>
-                                    <!--suppress MavenModelInspection -->
-                                    <passphraseServerId>${gpg.keyname}</passphraseServerId>
-
-                                    <gpgArguments>
-<!--                                        <arg>&#45;&#45;batch</arg>-->
-                                        <arg>--pinentry-mode</arg>
-                                        <arg>loopback</arg>
-                                    </gpgArguments>
-                                </configuration>
+<!--                                <configuration>-->
+<!--                                    <executable>gpg2</executable>-->
+<!--                                    <gpgArguments>-->
+<!--                                        <arg>&#45;&#45;pinentry-mode</arg>-->
+<!--                                        <arg>loopback</arg>-->
+<!--                                    </gpgArguments>-->
+<!--                                    &lt;!&ndash;suppress MavenModelInspection &ndash;&gt;-->
+<!--                                    <passphrase>${gpg.passphrase}</passphrase>-->
+<!--                                </configuration>-->
                             </execution>
                         </executions>
                     </plugin>
