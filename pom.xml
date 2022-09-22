@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
@@ -82,15 +83,15 @@
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
-<!--                                <configuration>-->
-<!--                                    <executable>gpg2</executable>-->
-<!--                                    <gpgArguments>-->
-<!--                                        <arg>&#45;&#45;pinentry-mode</arg>-->
-<!--                                        <arg>loopback</arg>-->
-<!--                                    </gpgArguments>-->
-<!--                                    &lt;!&ndash;suppress MavenModelInspection &ndash;&gt;-->
-<!--                                    <passphrase>${gpg.passphrase}</passphrase>-->
-<!--                                </configuration>-->
+                                <!--                                <configuration>-->
+                                <!--                                    <executable>gpg2</executable>-->
+                                <!--                                    <gpgArguments>-->
+                                <!--                                        <arg>&#45;&#45;pinentry-mode</arg>-->
+                                <!--                                        <arg>loopback</arg>-->
+                                <!--                                    </gpgArguments>-->
+                                <!--                                    &lt;!&ndash;suppress MavenModelInspection &ndash;&gt;-->
+                                <!--                                    <passphrase>${gpg.passphrase}</passphrase>-->
+                                <!--                                </configuration>-->
                             </execution>
                         </executions>
                     </plugin>
