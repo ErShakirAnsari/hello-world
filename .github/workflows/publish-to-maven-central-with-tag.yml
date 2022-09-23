@@ -27,6 +27,7 @@ jobs:
           allowUpdates: true
           artifacts: "${{ github.workspace }}/target/*.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
+          bodyFile: "release-notes.md"
       - name: Publish to the Maven Central Repository
         run: mvn deploy -P release -Dmaven.test.skip=true
         env:
