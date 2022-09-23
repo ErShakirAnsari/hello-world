@@ -191,11 +191,11 @@
 
     <developers>
         <developer>
-            <id>dev-id</id>
             <name>Shakir Ansari</name>
             <roles>
                 <role>developer</role>
             </roles>
+            <url>https://github.com/ErShakirAnsari</url>
         </developer>
     </developers>
 
