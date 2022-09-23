@@ -132,41 +132,8 @@
     </build>
 
     <profiles>
-        <!--release-manually-->
         <profile>
             <id>release</id>
-            <build>
-                <plugins>
-                    <!--maven-gpg-plugin-->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                    </plugin>
-
-                    <!--maven-source-plugin-->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                    </plugin>
-
-                    <!--maven-javadoc-plugin-->
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                    </plugin>
-
-                    <!-- nexus-staging-maven-plugin -->
-                    <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-
-        <!--release-with-github-action-->
-        <profile>
-            <id>release-with-github-action</id>
             <build>
                 <plugins>
                     <!--maven-gpg-plugin-->
