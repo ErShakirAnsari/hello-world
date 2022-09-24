@@ -3,7 +3,7 @@
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.4.5-SNAPSHOT</version>
+    <version>${revision}</version>
 
     <name>Hello World</name>
     <url>https://github.com/ErShakirAnsari/hello-world</url>
@@ -18,9 +18,12 @@
     </modules>
 
     <properties>
+        <revision>0.4.5-SNAPSHOT</revision>
+
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <id-ossrh>ossrh-ershakiransari</id-ossrh>
     </properties>
 
