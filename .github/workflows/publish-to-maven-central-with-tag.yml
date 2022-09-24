@@ -1,7 +1,7 @@
 name: 🏷 [tag] Maven Central Deployment
 
 on:
-  create:
+  push:
     tags:
       - '*'
 
