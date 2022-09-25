@@ -5,26 +5,35 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ershakiransari/hello-world?color=g&label=Repo%20Size&logo=github)
 [![mvn-clean-build](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml)
-[![REELEASE Maven Central Deployment](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml)
+[![Maven Central Deployment On Tag PUSH](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml)
+---
+
+### Hello World (Parent pom)
 
 ```
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.5.9</version>
+    <version>0.6.0</version>
 </dependency>
 ```
+
+### Hello Maven (jar)
+
 ```
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-maven</artifactId>
-    <version>0.5.9</version>
+    <version>0.6.0</version>
 </dependency>
 ```
+
+### Hello Java (jar)
+
 ```
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-java</artifactId>
-    <version>0.5.9</version>
+    <version>0.6.0</version>
 </dependency>
 ```
