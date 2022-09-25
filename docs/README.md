@@ -5,7 +5,10 @@
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/ershakiransari/hello-world?color=g&label=Repo%20Size&logo=github)
 [![mvn-clean-build](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml)
-[![REELEASE Maven Central Deployment](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml)
+[![Maven Central Deployment On Tag PUSH](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml)
+---
+
+### Hello World (Parent pom)
 
 ```
 <dependency>
@@ -14,6 +17,9 @@
     <version>${project.version}</version>
 </dependency>
 ```
+
+### Hello Maven (jar)
+
 ```
 <dependency>
     <groupId>${project.groupId}</groupId>
@@ -21,6 +27,9 @@
     <version>${project.version}</version>
 </dependency>
 ```
+
+### Hello Java (jar)
+
 ```
 <dependency>
     <groupId>${project.groupId}</groupId>
