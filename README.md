@@ -11,20 +11,20 @@
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.5.8</version>
+    <version>0.5.9</version>
 </dependency>
 ```
 ```
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-maven</artifactId>
-    <version>0.5.8</version>
+    <version>0.5.9</version>
 </dependency>
 ```
 ```
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-java</artifactId>
-    <version>0.5.8</version>
+    <version>0.5.9</version>
 </dependency>
 ```
