@@ -22,15 +22,11 @@ jobs:
       - name: build artifact
         run: mvn clean package --no-transfer-progress
       - name: Publish to the Maven Central Repository
-        run: mvn deploy -P release -Dmaven.test.skip=true
+        run: mvn deploy -P release -Dmaven.test.skip=true --no-transfer-progress
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
-  github-release:
-    needs: publish
-    runs-on: ubuntu-latest
-    steps:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
