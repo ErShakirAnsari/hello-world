@@ -1,14 +1,14 @@
 # Hello World 🌎
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.ershakiransari/hello-world/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.ershakiransari/hello-world)  
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.ershakiransari/hello-world/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.ershakiransari/hello-world)
 
 [![mvn-clean-build](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml)
 [![REELEASE Maven Central Deployment](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml)
 
 ```
 <dependency>
-  <groupId>${project.groupId}</groupId>
-  <artifactId>${project.artifactId}</artifactId>
-  <version>${project.version}</version>
+    <groupId>com.github.ershakiransari</groupId>
+    <artifactId>hello-world</artifactId>
+    <version>${project.version}</version>
 </dependency>
 ```
