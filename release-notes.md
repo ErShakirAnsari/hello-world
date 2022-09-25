@@ -1,3 +1,3 @@
-# what's new?
+# What's new?
 - Minor improvements 
 - Fixed old bugs and added new ones 😕
