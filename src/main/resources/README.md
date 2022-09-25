@@ -4,3 +4,11 @@
 
 [![mvn-clean-build](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/mvn-clean-build.yml)
 [![REELEASE Maven Central Deployment](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/hello-world/actions/workflows/publish-to-maven-central-with-tag.yml)
+
+```
+<dependency>
+  <groupId>${project.groupId}</groupId>
+  <artifactId>${project.artifactId}</artifactId>
+  <version>${project.version}</version>
+</dependency>
+```
