@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
@@ -23,6 +24,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <id-ossrh>ossrh-ershakiransari</id-ossrh>
+        <!--<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>-->
+        <maven.build.timestamp.format>yyyy</maven.build.timestamp.format>
+        <ajaxer.build.year>${maven.build.timestamp}</ajaxer.build.year>
     </properties>
 
     <build>
