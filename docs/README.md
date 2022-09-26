@@ -11,11 +11,11 @@
 ### Hello World (Parent pom)
 
 ```
-<dependency>
+<parent>
     <groupId>${project.groupId}</groupId>
     <artifactId>hello-world</artifactId>
     <version>${project.version}</version>
-</dependency>
+</parent>
 ```
 
 ### Hello Maven (jar)
