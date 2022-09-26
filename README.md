@@ -11,11 +11,11 @@
 ### Hello World (Parent pom)
 
 ```
-<dependency>
+<parent>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.6.3</version>
-</dependency>
+    <version>0.6.4</version>
+</parent>
 ```
 
 ### Hello Maven (jar)
@@ -24,7 +24,7 @@
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-maven</artifactId>
-    <version>0.6.3</version>
+    <version>0.6.4</version>
 </dependency>
 ```
 
@@ -34,6 +34,6 @@
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-java</artifactId>
-    <version>0.6.3</version>
+    <version>0.6.4</version>
 </dependency>
 ```
