@@ -4,7 +4,7 @@
     <parent>
         <groupId>org.ajaxer</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.4</version>
+        <version>0.0.5</version>
     </parent>
 
     <groupId>com.github.ershakiransari</groupId>
@@ -26,17 +26,6 @@
     <properties>
         <id-ossrh>ossrh-ershakiransari</id-ossrh>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>${id-ossrh}</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>${id-ossrh}</id>
-            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>
 
     <scm>
         <connection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</connection>
