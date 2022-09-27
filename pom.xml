@@ -31,7 +31,6 @@
         <connection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</connection>
         <developerConnection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</developerConnection>
         <url>https://github.com/ErShakirAnsari/hello-world/</url>
-        <tag>v0.4.2</tag>
     </scm>
 
     <developers>
