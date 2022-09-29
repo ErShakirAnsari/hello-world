@@ -1,6 +1,29 @@
+#### eclipse ###
+.project
+.classpath
+.settings
 
+### sts ###
+.apt_generated
+.factorypath
+.springBeans
+.sts4-cache
 
-#maven
+### intelliJ idea ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### netbeans ###
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### maven ###
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -12,7 +35,7 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-#java
+### java ###
 *.class
 *.log
 *.ctxt
@@ -24,10 +47,10 @@ buildNumber.properties
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+replay_pid*
 
+### other ###
+.DS_Store
 
-.idea/
-.flattened-pom.xml
+### user-defined ###
