@@ -1,3 +1,26 @@
-# What's new in v0.6.8 ?
+## What's new in v0.6.9 ?
+
 - Minor improvements
 - Fixed old bugs and added new ones 😕
+
+### Features
+
+---
+
+- coming soon
+
+### Bugs
+
+- coming soon
+
+---
+
+### Deprecations
+
+- coming soon
+
+---
+
+### Removals (old deprecations)
+
+- coming soon
