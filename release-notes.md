@@ -1,4 +1,4 @@
-## What's new in v0.7.3 ?
+## What's new in v0.7.4 ?
 
 - Minor improvements
 - Fixed old bugs and added new ones 😕
