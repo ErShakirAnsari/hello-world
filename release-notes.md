@@ -1,4 +1,4 @@
-## What's new in v0.8.9 ?
+## What's new in v0.9.0 ?
 
 - Minor improvements
 - Fixed old bugs and added new ones 😕
