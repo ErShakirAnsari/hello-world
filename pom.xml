@@ -25,7 +25,7 @@
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>0.9.2-SNAPSHOT</version>
+    <version>0.9.2</version>
 
     <name>Hello World</name>
     <url>https://github.com/ErShakirAnsari/hello-world</url>
@@ -47,7 +47,7 @@
         <connection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</connection>
         <developerConnection>scm:git:https://github.com/ErShakirAnsari/hello-world.git</developerConnection>
         <url>https://github.com/ErShakirAnsari/hello-world/</url>
-        <tag>HEAD</tag>
+        <tag>v0.9.2</tag>
     </scm>
 
     <developers>
