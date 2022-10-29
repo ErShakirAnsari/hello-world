@@ -19,7 +19,7 @@
     <parent>
         <artifactId>hello-world</artifactId>
         <groupId>com.github.ershakiransari</groupId>
-        <version>0.9.5-SNAPSHOT</version>
+        <version>0.9.5</version>
     </parent>
 
     <artifactId>hello-maven</artifactId>
