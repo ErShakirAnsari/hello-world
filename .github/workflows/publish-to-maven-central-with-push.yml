@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     container: ershakiransari/jdk:8-mvn3
     steps:
+      - name: Code checkout
+        uses: actions/checkout@v3
+
       - name: Building artifact
         run: mvn clean package --no-transfer-progress
 
