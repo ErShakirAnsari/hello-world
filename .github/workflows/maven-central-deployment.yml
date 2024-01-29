@@ -83,7 +83,7 @@ jobs:
 
       # Attaching artifact to release
       - name: Attaching artifacts to release ${{ github.event.inputs.version }}
-        id: attaching-pom.xml
+        id: attaching-pom-xml
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
