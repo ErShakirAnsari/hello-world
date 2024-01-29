@@ -16,6 +16,7 @@ jobs:
       - name: Code checkout
         uses: actions/checkout@v3
 
+        # DO NOT USE CONTAINER, else gpg sign step will fail
       - name: Set up Java for publishing to Maven Central Repository
         uses: actions/setup-java@v1
         with:
