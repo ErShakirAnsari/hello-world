@@ -24,7 +24,8 @@ jobs:
         run: |
           mvn deploy -Prelease -Dmaven.test.skip=true \
           --no-transfer-progress \
-          --batch-mode
+          --batch-mode \
+          -e
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
