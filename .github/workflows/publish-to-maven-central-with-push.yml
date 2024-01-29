@@ -22,10 +22,7 @@ jobs:
 
       - name: Publish to the Maven Central Repository
         run: |
-          mvn deploy -Prelease -Dmaven.test.skip=true \
-          --no-transfer-progress \
-          --batch-mode \
-          -e
+          mvn deploy -P release -Dmaven.test.skip=true --no-transfer-progress -e
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
