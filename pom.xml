@@ -40,7 +40,7 @@
     </modules>
 
     <properties>
-        <id-ossrh>ossrh-ershakiransari</id-ossrh>
+        <id-ossrh>ossrh</id-ossrh>
     </properties>
 
     <scm>
@@ -52,11 +52,11 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>${id-ossrh}</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
+            <id>${id-ossrh}</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
