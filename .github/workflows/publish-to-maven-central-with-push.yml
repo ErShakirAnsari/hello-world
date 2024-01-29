@@ -42,7 +42,7 @@ jobs:
     name: Git tag & release
     needs: build-publish
     runs-on: ubuntu-latest
-    container: ershakiransari/jdk8-mvn3
+    container: ershakiransari/jdk:8-mvn3
     steps:
       - name: Code checkout for ${{ github.event.inputs.version }}
         uses: actions/checkout@v3
