@@ -52,11 +52,11 @@
 
     <distributionManagement>
         <snapshotRepository>
-            <id>${id-ossrh}</id>
+            <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>${id-ossrh}</id>
+            <id>ossrh</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
@@ -102,7 +102,7 @@
                         <version>1.6.7</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>${id-ossrh}</serverId>
+                            <serverId>ossrh</serverId>
                             <!-- below url will be provided by sonatype in you JIRA issue -->
                             <nexusUrl>https://oss.sonatype.org/</nexusUrl>
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
