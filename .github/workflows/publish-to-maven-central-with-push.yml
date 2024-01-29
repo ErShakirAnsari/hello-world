@@ -9,6 +9,7 @@ on:
 
 jobs:
   build-publish:
+    name: Build & maven publish
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout for ${{ github.event.inputs.version }}
