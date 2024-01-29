@@ -1,27 +1,20 @@
 name: Maven Central Deployment
 
 on:
-#  push:
-#    branches: [ "release" ]
-  pull_request:
-    branches: [ "release" ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Tag Version (add prefix v)
+        required: true
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    container: ershakiransari/jdk:8-mvn3
     steps:
-      - uses: actions/checkout@v2
-      - name: Set up Java for publishing to Maven Central Repository
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-          server-id: ossrh-ershakiransari
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-          gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-          gpg-passphrase: MAVEN_GPG_PASSPHRASE
-      - name: build artifact
+      - name: Building artifact
         run: mvn clean package --no-transfer-progress
+
       - name: Publish to the Maven Central Repository
         run: |
           mvn deploy -Prelease-with-github-action -Dmaven.test.skip=true \
