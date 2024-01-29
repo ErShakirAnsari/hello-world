@@ -8,13 +8,14 @@ on:
         required: true
 
 jobs:
-  publish:
+  build-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Code checkout for ${{ github.event.inputs.version }}
         uses: actions/checkout@v3
 
         # DO NOT USE CONTAINER, else gpg sign step will fail
+
       - name: Set up Java 1.8
         uses: actions/setup-java@v1
         with:
@@ -35,6 +36,18 @@ jobs:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
           MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+  tag-release:
+    name: Git tag & release
+    needs: check-theme-changes
+    runs-on: ubuntu-latest
+    container: ershakiransari/jdk8-mvn3
+    steps:
+      - name: Code checkout for ${{ github.event.inputs.version }}
+        uses: actions/checkout@v3
+
+      - name: Building artifact for ${{ github.event.inputs.version }}
+        run: mvn clean package --no-transfer-progress
 
       # Creating A Release
       - name: Creating Release ${{ github.event.inputs.version }}
@@ -74,3 +87,4 @@ jobs:
           asset_path: ./hello-maven/target/hello-maven.jar
           asset_name: hello-maven-${{ github.event.inputs.version }}.jar
           asset_content_type: application/java-archive
+
