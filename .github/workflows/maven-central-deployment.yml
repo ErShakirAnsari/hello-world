@@ -20,7 +20,8 @@ jobs:
       - name: Setup Java JDK
         uses: actions/setup-java@v4.0.0
         with:
-          java-version: 1.8
+          distribution: 'corretto'
+          java-version: '8'
           # Set this in pom.xml
           server-id: ossrh-ershakiransari
           server-username: MAVEN_USERNAME
