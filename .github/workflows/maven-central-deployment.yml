@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4.1.1
 
         # DO NOT USE CONTAINER, else gpg sign step will fail
-
+        # https://github.com/marketplace/actions/setup-java-jdk
       - name: Setup Java JDK
         uses: actions/setup-java@v4.0.0
         with:
@@ -58,7 +58,7 @@ jobs:
       # Creating A Release
       - name: Creating Release ${{ github.event.inputs.version }}
         id: create_release
-        uses: ershakiransari/create-release@v1.0.0
+        uses: ErShakirAnsari/create-release@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
@@ -70,10 +70,12 @@ jobs:
           draft: false
           prerelease: false
 
+
+
       # Attaching artifact to release
       - name: Attaching artifacts to release ${{ github.event.inputs.version }}
         id: attaching-hello-java
-        uses: actions/upload-release-asset@v1
+        uses: ErShakirAnsari/upload-release-asset@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -85,7 +87,7 @@ jobs:
       # Attaching artifact to release
       - name: Attaching artifacts to release ${{ github.event.inputs.version }}
         id: attaching-pom-xml
-        uses: actions/upload-release-asset@v1
+        uses: ErShakirAnsari/upload-release-asset@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -97,7 +99,7 @@ jobs:
       # Attaching artifact to release
       - name: Attaching artifacts to release ${{ github.event.inputs.version }}
         id: attaching-hello-maven
-        uses: actions/upload-release-asset@v1
+        uses: ErShakirAnsari/upload-release-asset@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
