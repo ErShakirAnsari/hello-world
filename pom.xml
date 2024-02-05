@@ -18,13 +18,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <!--
     <parent>
         <groupId>org.ajaxer</groupId>
         <artifactId>parent</artifactId>
         <version>0.0.9</version>
     </parent>
-    -->
 
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
@@ -160,20 +158,22 @@
                     </plugin>
 
                     <!-- nexus-staging-maven-plugin -->
+                    <!--
                     <plugin>
-                        <!-- https://mvnrepository.com/artifact/org.sonatype.plugins/nexus-staging-maven-plugin -->
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.7</version>
-                        <extensions>true</extensions>
-                        <configuration>
-                            <serverId>${id-ossrh}</serverId>
-                            <!-- below url will be provided by sonatype in you JIRA issue -->
-                            <!-- <nexusUrl>file:/tmp/local_repo/release</nexusUrl> -->
-                            <!-- <nexusUrl>https://oss.sonatype.org/</nexusUrl> -->
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                        </configuration>
-                    </plugin>
+                         &lt;!&ndash; https://mvnrepository.com/artifact/org.sonatype.plugins/nexus-staging-maven-plugin &ndash;&gt;
+                         <groupId>org.sonatype.plugins</groupId>
+                         <artifactId>nexus-staging-maven-plugin</artifactId>
+                         <version>1.6.7</version>
+                         <extensions>true</extensions>
+                         <configuration>
+                             <serverId>${id-ossrh}</serverId>
+                             &lt;!&ndash; below url will be provided by sonatype in you JIRA issue &ndash;&gt;
+                             &lt;!&ndash; <nexusUrl>file:/tmp/local_repo/release</nexusUrl> &ndash;&gt;
+                             &lt;!&ndash; <nexusUrl>https://oss.sonatype.org/</nexusUrl> &ndash;&gt;
+                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                         </configuration>
+                     </plugin>
+                     -->
 
                     <!--maven-resources-plugin-->
                     <plugin>
