@@ -30,11 +30,7 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: Building & Publishing artifact ${{ github.event.inputs.version }} to Maven Central
-        run: |
-          mvn clean deploy \
-          -P release \
-          -DaltDeploymentRepository=ossrh-ershakiransari::default::file:/tmp/alt-repo \
-          --no-transfer-progress -e
+        run: mvn clean deploy -P release -DaltDeploymentRepository=ossrh-ershakiransari::default::file:/tmp/alt-repo --no-transfer-progress -e
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
