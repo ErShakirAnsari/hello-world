@@ -52,6 +52,19 @@
         <tag>HEAD</tag>
     </scm>
 
+    <distributionManagement>
+        <repository>
+            <id>${id-ossrh}</id>
+            <name>Central Repository OSSRH</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>${id-ossrh}</id>
+            <name>Central Snapshots Repository OSSRH</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <developers>
         <developer>
             <name>Shakir Ansari</name>
@@ -65,19 +78,6 @@
     <profiles>
         <profile>
             <id>release</id>
-            <distributionManagement>
-                <repository>
-                    <id>${id-ossrh}</id>
-                    <name>Central Repository OSSRH</name>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>${id-ossrh}</id>
-                    <name>Central Snapshots Repository OSSRH</name>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-            </distributionManagement>
-
             <build>
                 <plugins>
                     <!--maven-gpg-plugin-->
@@ -103,8 +103,6 @@
                         <!-- https://mvnrepository.com/artifact/org.sonatype.plugins/nexus-staging-maven-plugin -->
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.7</version>
-                        <extensions>true</extensions>
                         <configuration>
                             <serverId>${id-ossrh}</serverId>
                             <!-- below url will be provided by sonatype in you JIRA issue -->
@@ -124,18 +122,6 @@
 
         <profile>
             <id>release-dry-run</id>
-            <distributionManagement>
-                <repository>
-                    <id>${id-ossrh}</id>
-                    <name>Local Repository OSSRH</name>
-                    <url>file:/tmp/local_repo/release</url>
-                </repository>
-                <snapshotRepository>
-                    <id>${id-ossrh}</id>
-                    <name>Local Snapshots Repository OSSRH</name>
-                    <url>file:/tmp/local_repo/snapshot</url>
-                </snapshotRepository>
-            </distributionManagement>
 
             <build>
                 <plugins>
