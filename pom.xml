@@ -167,7 +167,8 @@
                         <configuration>
                             <serverId>${id-ossrh}</serverId>
                             <!-- below url will be provided by sonatype in you JIRA issue -->
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <nexusUrl>file:/tmp/local_repo/release</nexusUrl>
+                            <!-- <nexusUrl>https://oss.sonatype.org/</nexusUrl> -->
                             <autoReleaseAfterClose>true</autoReleaseAfterClose>
                         </configuration>
                     </plugin>
