@@ -14,7 +14,7 @@
 <parent>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-world</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </parent>
 ```
 
@@ -24,7 +24,7 @@
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-maven</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 
@@ -34,6 +34,6 @@
 <dependency>
     <groupId>com.github.ershakiransari</groupId>
     <artifactId>hello-java</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </dependency>
 ```
