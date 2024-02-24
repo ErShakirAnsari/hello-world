@@ -1,4 +1,4 @@
-name: Maven Clean Build
+name: Schedule Build
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Maven Clean Build
+    name: Schedule Build
     runs-on: ubuntu-latest
     container: ershakiransari/jdk:8-mvn3
 
