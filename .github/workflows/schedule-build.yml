@@ -2,7 +2,7 @@ name: Schedule Build
 
 on:
   schedule:
-    - cron: "*/15 * * * *" # every 30min UTC
+    - cron: "0 */24 * * *" # every hr
 
 jobs:
   build:
