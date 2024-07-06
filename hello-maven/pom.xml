@@ -15,10 +15,11 @@
   ~ limitations under the License.
   -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>hello-world</artifactId>
         <groupId>com.github.ershakiransari</groupId>
+        <artifactId>hello-world</artifactId>
         <version>1.1.1</version>
     </parent>
 
@@ -50,5 +51,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <relocation>
+            <groupId>com.github.ershakiransari.hello</groupId>
+            <message>This artifact has been moved to a new groupId. Please update your dependencies.</message>
+        </relocation>
+    </distributionManagement>
 
 </project>

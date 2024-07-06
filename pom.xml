@@ -58,11 +58,15 @@
             <name>Central Repository OSSRH</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-<!--        <snapshotRepository>-->
-<!--            <id>${id-ossrh}</id>-->
-<!--            <name>Central Snapshots Repository OSSRH</name>-->
-<!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
-<!--        </snapshotRepository>-->
+        <snapshotRepository>
+            <id>${id-ossrh}</id>
+            <name>Central Snapshots Repository OSSRH</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <relocation>
+            <groupId>com.github.ershakiransari.hello</groupId>
+            <message>This artifact has been moved to a new groupId. Please update your dependencies.</message>
+        </relocation>
     </distributionManagement>
 
     <developers>

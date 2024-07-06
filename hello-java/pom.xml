@@ -45,5 +45,11 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <relocation>
+            <groupId>com.github.ershakiransari.hello</groupId>
+            <message>This artifact has been moved to a new groupId. Please update your dependencies.</message>
+        </relocation>
+    </distributionManagement>
 
 </project>
