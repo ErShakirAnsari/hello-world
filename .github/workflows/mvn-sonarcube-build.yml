@@ -1,4 +1,4 @@
-name: CI
+name: Maven Build with Sonar
 
 on:
   push:
