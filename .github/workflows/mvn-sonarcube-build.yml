@@ -1,0 +1,77 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Docker container with dynamic environment variables
+        run: |
+          docker run -d \
+            --name my-sonarqube \
+            -e JAVA_VERSION=${{ env.JAVA_VERSION }} \
+            -e MAVEN_VERSION=${{ env.MAVEN_VERSION }} \
+            -e MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }} \
+            -e MYSQL_DATABASE=${{ env.MYSQL_DATABASE }} \
+            -e MYSQL_USER=${{ env.MYSQL_USER }} \
+            -e MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }} \
+            -e SONAR_VERSION=${{ env.SONAR_VERSION }} \
+            --network host \
+            ershakiransari/jms:1.0
+
+      - name: Wait for SonarQube to start
+        run: |
+          timeout=300  # Set timeout to 5 minutes (300 seconds)
+          interval=5   # Check every 5 seconds
+          elapsed=0
+          while [ $elapsed -lt $timeout ]; do
+            if curl -s http://localhost:9000 > /dev/null; then
+              echo "SonarQube is up and running."
+              exit 0
+            fi
+            echo "Waiting for SonarQube to start..."
+            sleep $interval
+            elapsed=$((elapsed + interval))
+          done
+          echo "SonarQube did not start within the timeout period."
+          exit 1
+
+      - name: Build and Analyze
+        run: |
+          mvn clean install
+          mvn sonar:sonar
+        env:
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_LOGIN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Upload SonarQube Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: sonar-reports
+          path: /opt/sonarqube/logs
+
+      - name: Stop and remove Docker container
+        run: |
+          docker stop my-sonarqube
+          docker rm my-sonarqube
+
+    env:
+      JAVA_VERSION: 17
+      MAVEN_VERSION: 3.8.8
+      MYSQL_DATABASE: sonar
+      MYSQL_USER: sonar
+      SONAR_VERSION: 10.0
+      MYSQL_ROOT_PASSWORD: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+      MYSQL_PASSWORD: ${{ secrets.MYSQL_PASSWORD }}
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
