@@ -1,0 +1,49 @@
+name: Generate Token
+
+on:
+  push:
+    branches:
+      - development
+  workflow_dispatch:
+    inputs:
+      APP_ID:
+        description: 'Github application ID'
+        required: true
+      APP_PRIVATE_KEY:
+        description: 'Github application Private key'
+        required: true
+
+jobs:
+  generate-token:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Generate GitHub App Token
+        id: generate-token
+        run: |
+          # Define variables
+          APP_ID=${{ vars.APP_ID }}
+          PRIVATE_KEY="${{ secrets.PRIVATE_KEY }}"
+          INSTALLATION_ID=<YOUR_INSTALLATION_ID>
+
+          # Generate JWT (Assuming you have a method to create a JWT)
+          JWT=$(generate-jwt ${APP_ID} "${PRIVATE_KEY}")
+
+          # Generate installation access token
+          ACCESS_TOKEN=$(curl -X POST \
+            -H "Authorization: Bearer ${JWT}" \
+            -H "Accept: application/vnd.github+json" \
+            -d '{}' \
+            https://api.github.com/app/installations/${INSTALLATION_ID}/access_tokens \
+            | jq -r .token)
+
+          # Output the token
+          echo "ACCESS_TOKEN=${ACCESS_TOKEN}" >> $GITHUB_ENV
+
+      - name: Use the Token
+        run: |
+          echo "Using the token..."
+          curl -H "Authorization: Bearer ${{ env.ACCESS_TOKEN }}" https://api.github.com/user/repos
