@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# Define variables
-APP_ID=$1
-PRIVATE_KEY=$2
-INSTALLATION_ID=$3
+set -e
 
-# Create a temporary file to store the private key
+# Define variables
+APP_ID="${{ secrets.GH_APP__HELLO_WORLD_APP_ID }}"
+PRIVATE_KEY="${{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}"
+INSTALLATION_ID=<YOUR_INSTALLATION_ID>
+
+# Write the private key to a file
 echo "${PRIVATE_KEY}" > private-key.pem
 
 # Generate JWT using Node.js
@@ -22,10 +24,10 @@ JWT=$(node -e "
   console.log(token);
 ")
 
-# Clean up the temporary file
+# Clean up the private key file
 rm private-key.pem
 
-# Use the JWT to get an installation access token
+# Generate installation access token
 ACCESS_TOKEN=$(curl -X POST \
   -H "Authorization: Bearer ${JWT}" \
   -H "Accept: application/vnd.github+json" \
@@ -33,11 +35,5 @@ ACCESS_TOKEN=$(curl -X POST \
   https://api.github.com/app/installations/${INSTALLATION_ID}/access_tokens \
   | jq -r .token)
 
-# Check if the access token was retrieved successfully
-if [ -z "$ACCESS_TOKEN" ]; then
-  echo "Failed to generate access token"
-  exit 1
-fi
-
-# Output the token as an environment variable
+# Output the token
 echo "ACCESS_TOKEN=${ACCESS_TOKEN}" >> $GITHUB_ENV

@@ -14,24 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install jq if necessary
-        run: sudo apt-get update && sudo apt-get install -y jq
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-      - name: Generate GitHub App Token
-        id: generate-token
-        run: |
-          # Make sure the script is executable
-          chmod +x ./generate-token.sh
-          
-          # Execute the external shell script
-          ./generate-token.sh \
-            ${{ secrets.GH_APP__HELLO_WORLD_APP_ID }} \
-            "${{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}" \
-            <YOUR_INSTALLATION_ID>
+      - name: Install dependencies
+        run: npm install jsonwebtoken
+
+      - name: Run Token Generation Script
+        run: ./generate-token.sh
 
       - name: Use the Token
         run: |
           echo "Using the token..."
-          # Example usage of the token
           curl -H "Authorization: Bearer ${{ env.ACCESS_TOKEN }}" \
             https://api.github.com/user/repos
