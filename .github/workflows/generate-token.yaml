@@ -17,9 +17,13 @@ jobs:
       - name: Generate GitHub App Token
         id: generate-token
         run: |
+          # Define variables
+          APP_ID=${{ secrets.GH_APP__HELLO_WORLD_APP_ID }}
+          PRIVATE_KEY="${{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}"
+
           # Create JWT
           JWT=$(curl -X POST \
-            -H "Authorization: Bearer $(echo -n "client_id={{ secrets.GH_APP__HELLO_WORLD_APP_ID }}&client_secret={{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}" | base64)" \
+            -H "Authorization: Bearer $(echo -n "client_id=${APP_ID}&client_secret=${PRIVATE_KEY}" | base64)" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "grant_type=client_credentials" \
             https://github.com/login/oauth/access_token)
