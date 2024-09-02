@@ -20,6 +20,9 @@ jobs:
       - name: Generate GitHub App Token
         id: generate-token
         run: |
+          # Make sure the script is executable
+          chmod +x ./generate-token.sh
+          
           # Execute the external shell script
           ./generate-token.sh \
             ${{ secrets.GH_APP__HELLO_WORLD_APP_ID }} \
