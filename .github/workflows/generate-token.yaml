@@ -3,7 +3,7 @@ name: Generate Token
 on:
   push:
     branches:
-      - development
+      - master
   workflow_dispatch:
 
 jobs:
