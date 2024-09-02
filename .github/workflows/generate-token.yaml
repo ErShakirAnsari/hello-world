@@ -14,55 +14,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install jq if necessary
-        run: sudo apt-get update && sudo apt-get install -y jq
-
-      - name: Generate GitHub App JWT
-        id: generate-jwt
-        run: |
-          # Define variables
-          APP_ID=${{ secrets.GH_APP__HELLO_WORLD_APP_ID }}
-          PRIVATE_KEY="${{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}"
-          INSTALLATION_ID=<YOUR_INSTALLATION_ID>
-
-          # Create a temporary file to store the private key
-          echo "${PRIVATE_KEY}" > private-key.pem
-          
-          # Generate JWT using Node.js
-          JWT=$(node -e "
-            const fs = require('fs');
-            const jwt = require('jsonwebtoken');
-            const privateKey = fs.readFileSync('private-key.pem', 'utf8');
-            const payload = {
-              iat: Math.floor(Date.now() / 1000) - 60,
-              exp: Math.floor(Date.now() / 1000) + (10 * 60),
-              iss: '${APP_ID}'
-            };
-            const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
-            console.log(token);
-          ")
-
-          # Clean up the temporary file
-          rm private-key.pem
-
-          # Set JWT as an environment variable
-          echo "JWT=${JWT}" >> $GITHUB_ENV
-
-      - name: Generate Installation Access Token
+      - name: Generate GitHub App Token
         id: generate-token
         run: |
-          # Use the JWT to get an access token
-          ACCESS_TOKEN=$(curl -X POST \
-            -H "Authorization: Bearer ${{ env.JWT }}" \
-            -H "Accept: application/vnd.github+json" \
-            -d '{}' \
-            https://api.github.com/app/installations/${INSTALLATION_ID}/access_tokens \
-            | jq -r .token)
+          # Create JWT
+          JWT=$(curl -X POST \
+            -H "Authorization: Bearer $(echo -n "client_id={{ secrets.GH_APP__HELLO_WORLD_APP_ID }}&client_secret={{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}" | base64)" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            -d "grant_type=client_credentials" \
+            https://github.com/login/oauth/access_token)
 
-          # Set ACCESS_TOKEN as an environment variable
+          # Extract token from the response
+          ACCESS_TOKEN=$(echo $JWT | jq -r .access_token)
+
+          # Output the token
           echo "ACCESS_TOKEN=${ACCESS_TOKEN}" >> $GITHUB_ENV
 
       - name: Use the Token
         run: |
           echo "Using the token..."
-          curl -H "Authorization: Bearer ${{ env.ACCESS_TOKEN }}" https://api.github.com/user/repos
+          # Example usage of the token
+          curl -H "Authorization: Bearer ${{ env.ACCESS_TOKEN }}" \
+            https://api.github.com/user/repos
