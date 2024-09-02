@@ -27,7 +27,7 @@ jobs:
 
           # Create a temporary file to store the private key
           echo "${PRIVATE_KEY}" > private-key.pem
-
+          
           # Generate JWT using Node.js
           JWT=$(node -e "
             const fs = require('fs');
