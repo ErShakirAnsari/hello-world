@@ -5,13 +5,6 @@ on:
     branches:
       - development
   workflow_dispatch:
-    inputs:
-      APP_ID:
-        description: 'Github application ID'
-        required: true
-      APP_PRIVATE_KEY:
-        description: 'Github application Private key'
-        required: true
 
 jobs:
   generate-token:
@@ -25,7 +18,7 @@ jobs:
         id: generate-token
         run: |
           # Define variables
-          APP_ID=${{ vars.APP_ID }}
+          APP_ID=${{ secrets.APP_ID }}
           PRIVATE_KEY="${{ secrets.PRIVATE_KEY }}"
           INSTALLATION_ID=<YOUR_INSTALLATION_ID>
 
