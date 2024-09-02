@@ -18,8 +18,8 @@ jobs:
         id: generate-token
         run: |
           # Define variables
-          APP_ID=${{ secrets.APP_ID }}
-          PRIVATE_KEY="${{ secrets.PRIVATE_KEY }}"
+          APP_ID=${{ secrets.GH_APP__HELLO_WORLD_APP_ID }}
+          PRIVATE_KEY="${{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}"
           INSTALLATION_ID=<YOUR_INSTALLATION_ID>
 
           # Generate JWT (Assuming you have a method to create a JWT)
