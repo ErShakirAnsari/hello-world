@@ -14,22 +14,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install jq if necessary
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Generate GitHub App JWT
         id: generate-jwt
         run: |
-          # Install jq if it's not already installed
-          sudo apt-get update
-          sudo apt-get install -y jq
-
           # Define variables
           APP_ID=${{ secrets.GH_APP__HELLO_WORLD_APP_ID }}
           PRIVATE_KEY="${{ secrets.GH_APP__HELLO_WORLD_PRIVATE_KEY }}"
           INSTALLATION_ID=<YOUR_INSTALLATION_ID>
 
-          # Generate JWT using a Node.js script or similar method
+          # Create a temporary file to store the private key
+          echo "${PRIVATE_KEY}" > private-key.pem
+
+          # Generate JWT using Node.js
           JWT=$(node -e "
+            const fs = require('fs');
             const jwt = require('jsonwebtoken');
-            const privateKey = \`${PRIVATE_KEY}\`;
+            const privateKey = fs.readFileSync('private-key.pem', 'utf8');
             const payload = {
               iat: Math.floor(Date.now() / 1000) - 60,
               exp: Math.floor(Date.now() / 1000) + (10 * 60),
@@ -38,6 +41,9 @@ jobs:
             const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
             console.log(token);
           ")
+
+          # Clean up the temporary file
+          rm private-key.pem
 
           # Set JWT as an environment variable
           echo "JWT=${JWT}" >> $GITHUB_ENV
